@@ -24,7 +24,7 @@ const allCurrenciesUrl = "https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1
     }
  }
  */
-const currencyRatesUrl = (currency) => `https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies/${currency}.json`
+const getCurrencyRatesUrl = (currency) => `https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies/${currency}.json`
 
 export default {
     name: "App"
