@@ -27,13 +27,40 @@ const allCurrenciesUrl = "https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1
 const getCurrencyRatesUrl = (currency) => `https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies/${currency}.json`
 
 export default {
-    name: "App"
+    name: "App",
+    components: {IAutocomplete},
+    data() {
+        return {
+            allCurrencies: [],
+            amount: 0,
+            currentCurrencyKey: null,
+            exchangeRateKeyValuePairs: {}
+        }
+    },
+    mounted() {
+        this.retrieveCurrencies()
+    },
+    methods: {
+        retrieveCurrencies() {
+            // set this.allCurrencies using the api
+        },
+        onCurrencySelected(value) {
+            // set this.exchangeRateKeyValuePairs using the api
+        }
+    },
+    computed: {
+        exchangeRateList() {
+            // Convert this.exchangeRateKeyValuePairs into an array that can be used in the markup
+            return [];
+        }
+    }
 }
 
 </script>
 
 <template>
-
+    <input v-model="amount">
+    <i-autocomplete v-model="currentCurrencyKey" :items="allCurrencies" @change="onCurrencySelected"></i-autocomplete>
 </template>
 
 <style scoped>
